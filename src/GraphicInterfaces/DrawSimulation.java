@@ -1,12 +1,14 @@
 package GraphicInterfaces;
 
 import Model.Simulation;
+import java.awt.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.java.games.input.Keyboard;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.glu.Sphere;
 import static org.lwjgl.opengl.GL11.*;
 
@@ -47,7 +49,7 @@ public class DrawSimulation {
     }
 
     public static void drawRect(float x, float y, float width, float height) {
-        
+
         drawRect(x, y, width, height, 0);
     }
 
@@ -56,14 +58,14 @@ public class DrawSimulation {
         glPushMatrix();
         {
             glTranslatef(x, y, 0);
-            glRotatef(rot, 0,0,1);
-
+            glRotatef(rot, 0, 0, 1);
             glBegin(GL_QUADS);
             {
                 glVertex2f(0, 0);
                 glVertex2f(0, height);
-                glVertex2f(width,height);
+                glVertex2f(width, height);
                 glVertex2f(width, 0);
+
             }
             glEnd();
         }
@@ -71,10 +73,12 @@ public class DrawSimulation {
     }
 
     private static void initGl() {
+
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         glOrtho(0, Display.getWidth(), 0, Display.getHeight(), -1, 1);
         glMatrixMode(GL_MODELVIEW);
+
 
         glClearColor(0, 0, 0, 1);
 
@@ -88,7 +92,7 @@ public class DrawSimulation {
 
     private static void initDisplay() {
         try {
-            Display.setDisplayMode(new DisplayMode(794,778));
+            Display.setDisplayMode(new DisplayMode(794, 778));
             Display.create();
             Display.setVSyncEnabled(true);
         } catch (LWJGLException ex) {
