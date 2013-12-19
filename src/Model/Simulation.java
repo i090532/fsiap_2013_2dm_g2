@@ -13,6 +13,8 @@ public class Simulation {
     public Simulation() {
         objects = new ConcurrentLinkedQueue<SimulationObject>();
         createParticles();
+        addObject(new Magnet(350, 100));
+        addObject(new Magnet(350, 550));
     }
 
     public void getInput() {
