@@ -10,11 +10,12 @@ public class Simulation {
 
     private ConcurrentLinkedQueue<SimulationObject> objects;
 
-    public Simulation() {
+    public Simulation(Particle p) {
         objects = new ConcurrentLinkedQueue<SimulationObject>();
-        createParticles();
-        addObject(new Magnet(350, 100));
-        addObject(new Magnet(350, 550));
+        createParticles(p);
+        addObject(new Magnet(350, 250));
+        addObject(new Magnet(350, 495));
+        addObject(new Physics(240,270,0));
     }
 
     public void getInput() {
@@ -28,18 +29,16 @@ public class Simulation {
         objects.remove(o);
     }
 
-    public void createParticles() {
-        Thread one = new Thread() {
-
+    public void createParticles(final Particle p) {
+      Thread one = new Thread() {
             @Override
             public void run() {
                 try {
                     int i = 1;
                     while (i == 1) {
-                        float random = new Random().nextFloat() * 150;//cria um numero aleatorio entre 1 e 200
-                        Particle particle = new Particle((Display.getWidth() / 12) - Particle.SIZE / 2, (Display.getHeight() / 3) + (random) - Particle.SIZE, "a", 12, "positivo", 12, 1);
+                        Particle particle = new Particle((Display.getWidth() / 12) - Particle.SIZE / 2, (Display.getHeight() / 3) + 100 - Particle.SIZE, "a", p.getValor_carga(), "positivo", 12, p.getVelocidade(),"");
                         addObject(particle);
-                        Thread.sleep(5);
+                        Thread.sleep(100);
                     }
                 } catch (InterruptedException v) {
                     System.out.println(v);
@@ -54,6 +53,7 @@ public class Simulation {
         for (SimulationObject o : objects) {
             o.update();
 
+       
             if (o.getX() > 700) {
                 removeObject(o);
             }

@@ -9,12 +9,20 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -330,9 +338,34 @@ public class MainLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-       //show jinteralframe
+
+        showLogin(this);
     }//GEN-LAST:event_jLabel3MouseClicked
 
+      private void showLogin(JFrame frame) {
+        JPanel p = new JPanel(new BorderLayout(5,5));
+
+        JPanel labels = new JPanel(new GridLayout(0,1,2,2));
+        labels.add(new JLabel("Nome de utilizador", SwingConstants.RIGHT));
+        labels.add(new JLabel("Email", SwingConstants.RIGHT));
+        labels.add(new JLabel("Password", SwingConstants.RIGHT));
+        p.add(labels, BorderLayout.WEST);
+
+        JPanel controls = new JPanel(new GridLayout(0,1,2,2));
+        JTextField username = new JTextField();
+        controls.add(username);
+        JTextField email = new JTextField();
+        controls.add(email);
+        JPasswordField password = new JPasswordField();
+        password.addAncestorListener(new RequestFocusListener(false));
+        controls.add(password);
+        p.add(controls, BorderLayout.CENTER);
+
+        //LayoutManager l = new GroupLayout(p);
+        //p.setLayout(l);
+        JOptionPane.showMessageDialog(
+            frame, p, "Log In", JOptionPane.QUESTION_MESSAGE);
+    }
     /**
      * @param args the command line arguments
      */
@@ -371,4 +404,46 @@ public class MainLogin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
   
+}
+
+class RequestFocusListener implements AncestorListener
+{
+    private boolean removeListener;
+
+    /*
+     *  Convenience constructor. The listener is only used once and then it is
+     *  removed from the component.
+     */
+    public RequestFocusListener()
+    {
+        this(true);
+    }
+
+    /*
+     *  Constructor that controls whether this listen can be used once or
+     *  multiple times.
+     *
+     *  @param removeListener when true this listener is only invoked once
+     *                        otherwise it can be invoked multiple times.
+     */
+    public RequestFocusListener(boolean removeListener)
+    {
+        this.removeListener = removeListener;
+    }
+
+    @Override
+    public void ancestorAdded(AncestorEvent e)
+    {
+        JComponent component = e.getComponent();
+        component.requestFocusInWindow();
+
+        if (removeListener)
+            component.removeAncestorListener( this );
+    }
+
+    @Override
+    public void ancestorMoved(AncestorEvent e) {}
+
+    @Override
+    public void ancestorRemoved(AncestorEvent e) {}
 }

@@ -1,23 +1,27 @@
 package GraphicInterfaces;
 
+import Model.Particle;
 import Model.Simulation;
-import java.awt.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.java.games.input.Keyboard;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
-import org.lwjgl.util.glu.GLU;
-import org.lwjgl.util.glu.Sphere;
+
 import static org.lwjgl.opengl.GL11.*;
 
 public class DrawSimulation {
 
+    private static Particle p;
     private static Simulation simulation;
 
+    public DrawSimulation(Particle p) {
+        this.p = p;
+
+    }
+
     private static void initSimulation() {
-        simulation = new Simulation();
+        simulation = new Simulation(p);
 
     }
 
@@ -48,19 +52,16 @@ public class DrawSimulation {
         }
     }
 
-    public static void drawRect(float x, float y, float width, float height) {
-
-        drawRect(x, y, width, height, 0);
-    }
-
-    private static void drawRect(float x, float y, float width, float height, int rot) {
+    public static void drawRect(float x, float y, float width, float height, int red, int green, int blue) {
 
         glPushMatrix();
         {
             glTranslatef(x, y, 0);
-            glRotatef(rot, 0, 0, 1);
+            glRotatef(0, 0, 0, 1);
+
             glBegin(GL_QUADS);
             {
+                glColor3f(red, green, blue);
                 glVertex2f(0, 0);
                 glVertex2f(0, height);
                 glVertex2f(width, height);
@@ -68,6 +69,7 @@ public class DrawSimulation {
 
             }
             glEnd();
+
         }
         glPopMatrix();
     }
@@ -92,7 +94,7 @@ public class DrawSimulation {
 
     private static void initDisplay() {
         try {
-            Display.setDisplayMode(new DisplayMode(794, 778));
+            Display.setDisplayMode(new DisplayMode(794, 700));
             Display.create();
             Display.setVSyncEnabled(true);
         } catch (LWJGLException ex) {
