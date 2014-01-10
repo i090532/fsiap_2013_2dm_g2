@@ -3,8 +3,10 @@
  * and open the template in the editor.
  */
 
-
+import Controller.Controller;
+import GraphicInterfaces.RUHome;
 import GraphicInterfaces.UIHome;
+import Model.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -12,6 +14,9 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -23,6 +28,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+import sun.invoke.empty.Empty;
 
 /**
  *
@@ -30,12 +36,14 @@ import javax.swing.event.AncestorListener;
  */
 public class MainLogin extends javax.swing.JFrame {
 
-    
+    private Controller c;
+
     /**
      * Creates new form UIMain
      */
     public MainLogin() {
         initComponents();
+        c = new Controller();
     }
 
     /**
@@ -76,21 +84,24 @@ public class MainLogin extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1024, 768));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel2.setFont(new java.awt.Font("Arial", 0, 14));
         jPanel2.setMinimumSize(new java.awt.Dimension(1024, 768));
 
-        jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel19.setText("Username:");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 14));
 
-        jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel20.setText("Password:");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enter_login.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel2MouseEntered(evt);
             }
@@ -114,7 +125,7 @@ public class MainLogin extends javax.swing.JFrame {
                     .addComponent(jTextField1))
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(200, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -171,22 +182,20 @@ public class MainLogin extends javax.swing.JFrame {
             }
         });
 
-        jInternalFrame1.setVisible(false);
-
-        jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel21.setText("Username:");
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 14));
 
-        jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel22.setText("Password:");
 
-        jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel23.setText("Email:");
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 14));
 
-        jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Arial", 0, 14));
         jLabel24.setText("Confirmar Password:");
 
         jButton1.setText("Registar");
@@ -222,7 +231,7 @@ public class MainLogin extends javax.swing.JFrame {
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addGap(323, 323, 323)
                 .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 92, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,21 +325,21 @@ public class MainLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-       jLabel3.setBorder(BorderFactory.createEmptyBorder());
+        jLabel3.setBorder(BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-       jLabel4.setBorder(BorderFactory.createLoweredBevelBorder());
+        jLabel4.setBorder(BorderFactory.createLoweredBevelBorder());
     }//GEN-LAST:event_jLabel4MouseEntered
 
     private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-       jLabel4.setBorder(BorderFactory.createEmptyBorder());
+        jLabel4.setBorder(BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel4MouseExited
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       UIHome begin=new UIHome();
-       begin.setVisible(true);
-       setVisible(false);
+        UIHome begin = new UIHome();
+        begin.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -338,20 +347,50 @@ public class MainLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        try {
+            showLogin(this);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        showLogin(this);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-      private void showLogin(JFrame frame) {
-        JPanel p = new JPanel(new BorderLayout(5,5));
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
 
-        JPanel labels = new JPanel(new GridLayout(0,1,2,2));
+        boolean checkFields = checkFields(jTextField1.getText(), "a", new String(jPasswordField1.getPassword()));
+
+        if (checkFields) {//ciclo para verificar se campos estao preenchidos retorna true se nao estiver preenchido
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+        }
+        if (!checkFields) {// só segue para login se estiverem os campos preenchidos
+
+            try {
+                u = c.login(jTextField1.getText(), new String(jPasswordField1.getPassword()));//se retornar um user o login é efectuado
+
+            } catch (SQLException ex) {
+                Logger.getLogger(MainLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            if (u == null) {//user é null logo os campos nao corresponderam
+                JOptionPane.showMessageDialog(rootPane, "Username/Password inválido");
+            } else {
+                RUHome begin = new RUHome(u);
+                begin.setVisible(true);
+                setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void showLogin(JFrame frame) throws SQLException {
+        JPanel p = new JPanel(new BorderLayout(5, 5));
+
+        JPanel labels = new JPanel(new GridLayout(0, 1, 2, 2));
         labels.add(new JLabel("Nome de utilizador", SwingConstants.RIGHT));
         labels.add(new JLabel("Email", SwingConstants.RIGHT));
         labels.add(new JLabel("Password", SwingConstants.RIGHT));
         p.add(labels, BorderLayout.WEST);
 
-        JPanel controls = new JPanel(new GridLayout(0,1,2,2));
+        JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
         JTextField username = new JTextField();
         controls.add(username);
         JTextField email = new JTextField();
@@ -364,19 +403,33 @@ public class MainLogin extends javax.swing.JFrame {
         //LayoutManager l = new GroupLayout(p);
         //p.setLayout(l);
         JOptionPane.showMessageDialog(
-            frame, p, "Log In", JOptionPane.QUESTION_MESSAGE);
+                frame, p, "Log In", JOptionPane.QUESTION_MESSAGE);
+
+        if (checkFields(username.getText(), email.getText(), new String(password.getPassword()))) {//ciclo para verificar se campos estao preenchidos
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+        }
+        //registar retorna true se registar, false se o nome de ulizador já existir
+        boolean registo = c.registarUser(username.getText(), email.getText(), new String(password.getPassword()));
+
+        if (!registo) {
+            JOptionPane.showMessageDialog(rootPane, "O nome de utilizador já está em uso");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Registado com sucesso");
+        }
     }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-      //  JPanel cards;
-       // cards.add("RUIMain", new RUIMain());
-                java.awt.EventQueue.invokeLater(new Runnable() {
+        //  JPanel cards;
+        // cards.add("RUIMain", new RUIMain());
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new MainLogin().setVisible(true);
-                
+
             }
         });
     }
@@ -403,19 +456,26 @@ public class MainLogin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-  
+    private User u = null;
+
+    private boolean checkFields(String user, String email, String password) {
+        if (user.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
-class RequestFocusListener implements AncestorListener
-{
+class RequestFocusListener implements AncestorListener {
+
     private boolean removeListener;
 
     /*
      *  Convenience constructor. The listener is only used once and then it is
      *  removed from the component.
      */
-    public RequestFocusListener()
-    {
+    public RequestFocusListener() {
         this(true);
     }
 
@@ -426,24 +486,25 @@ class RequestFocusListener implements AncestorListener
      *  @param removeListener when true this listener is only invoked once
      *                        otherwise it can be invoked multiple times.
      */
-    public RequestFocusListener(boolean removeListener)
-    {
+    public RequestFocusListener(boolean removeListener) {
         this.removeListener = removeListener;
     }
 
     @Override
-    public void ancestorAdded(AncestorEvent e)
-    {
+    public void ancestorAdded(AncestorEvent e) {
         JComponent component = e.getComponent();
         component.requestFocusInWindow();
 
-        if (removeListener)
-            component.removeAncestorListener( this );
+        if (removeListener) {
+            component.removeAncestorListener(this);
+        }
     }
 
     @Override
-    public void ancestorMoved(AncestorEvent e) {}
+    public void ancestorMoved(AncestorEvent e) {
+    }
 
     @Override
-    public void ancestorRemoved(AncestorEvent e) {}
+    public void ancestorRemoved(AncestorEvent e) {
+    }
 }

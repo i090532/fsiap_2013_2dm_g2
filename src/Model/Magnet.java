@@ -14,6 +14,7 @@ public class Magnet extends SimulationObject {
 
     public static final int SIZE = 20;
     private float fm;
+    private float campo;
 
     public Magnet(float x, float y) {
         setX(x);
@@ -53,5 +54,20 @@ public class Magnet extends SimulationObject {
     public void calcularFM(Particle p,Physics physics) {
         float fm=(float) (p.getValor_carga()*p.getVelocidade()*physics.getCampo());
         setFm(fm);
+        setCampo(physics.getCampo());
+    }
+
+    /**
+     * @return the campo
+     */
+    public float getCampo() {
+        return campo;
+    }
+
+    /**
+     * @param campo the campo to set
+     */
+    public void setCampo(float campo) {
+        this.campo = campo;
     }
 }

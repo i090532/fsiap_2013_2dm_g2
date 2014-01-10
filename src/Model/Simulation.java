@@ -9,10 +9,11 @@ import org.lwjgl.opengl.Display;
 public class Simulation {
 
     private ConcurrentLinkedQueue<SimulationObject> objects;
-
-    public Simulation(Particle p) {
+        Particle p;
+    public Simulation(Particle particle) {
         objects = new ConcurrentLinkedQueue<SimulationObject>();
-        createParticles(p);
+        p=particle;
+        createParticles();
         addObject(new Magnet(350, 250));
         addObject(new Magnet(350, 495));
         addObject(new Physics(240,270,0));
@@ -29,14 +30,17 @@ public class Simulation {
         objects.remove(o);
     }
 
-    public void createParticles(final Particle p) {
+    public void createParticles() {
       Thread one = new Thread() {
             @Override
             public void run() {
                 try {
                     int i = 1;
                     while (i == 1) {
-                        Particle particle = new Particle((Display.getWidth() / 12) - Particle.SIZE / 2, (Display.getHeight() / 3) + 100 - Particle.SIZE, "a", p.getValor_carga(), "positivo", 12, p.getVelocidade(),"");
+                        Particle particle = new Particle((0) - Particle.SIZE / 2, 372- Particle.SIZE, "a", p.getValor_carga(), "positivo", 12, p.getVelocidade(),p.getDireccao());
+                        particle.setRaio(p.getRaio());
+                        particle.setDireccao(p.getDireccao());
+                        particle.setSaida(p.getSaida());
                         addObject(particle);
                         Thread.sleep(100);
                     }
@@ -54,7 +58,7 @@ public class Simulation {
             o.update();
 
        
-            if (o.getX() > 700) {
+            if (o.getX() > 700 || o.getY()>700 || o.getY()<200) {
                 removeObject(o);
             }
         }

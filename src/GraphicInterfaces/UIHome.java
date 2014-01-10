@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
@@ -31,6 +32,17 @@ public class UIHome extends javax.swing.JFrame {
     public UIHome() {
         initComponents();
         c = new Controller();
+        jScrollPane1.setBorder(null);
+        jScrollPane2.setBorder(null);
+        jScrollPane4.setBorder(null);
+        jScrollPane5.setBorder(null);
+        jScrollPane8.setBorder(null);
+        jScrollPane9.setBorder(null);
+        jScrollPane10.setBorder(null);
+        jScrollPane11.setBorder(null);
+        jScrollPane12.setBorder(null);
+        jScrollPane13.setBorder(null);
+        jScrollPane14.setBorder(null);
     }
 
     /**
@@ -51,12 +63,46 @@ public class UIHome extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextPane2 = new javax.swing.JTextPane();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextPane4 = new javax.swing.JTextPane();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextPane5 = new javax.swing.JTextPane();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextPane6 = new javax.swing.JTextPane();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextPane7 = new javax.swing.JTextPane();
+        jLabel39 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextPane8 = new javax.swing.JTextPane();
+        jLabel40 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTextPane9 = new javax.swing.JTextPane();
+        jLabel41 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -103,7 +149,7 @@ public class UIHome extends javax.swing.JFrame {
         jPanel1.setName(""); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Library-icon.png"))); // NOI18N
         jLabel1.setText("Apoio Teórico");
@@ -123,7 +169,7 @@ public class UIHome extends javax.swing.JFrame {
         });
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/My-Computer-icon.png"))); // NOI18N
         jLabel2.setText("Simulação");
@@ -143,18 +189,8 @@ public class UIHome extends javax.swing.JFrame {
         });
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turn-off-icon.png"))); // NOI18N
-        jLabel3.setText("Sair");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
-            }
-        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1.jpg"))); // NOI18N
 
@@ -162,48 +198,268 @@ public class UIHome extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Comportamento de uma partícula carregada num campo magnético\n\nPara entendermos melhor a respeito deste comportamento, pensemos num campo magnético uniforme, onde uma partícula eletrizada é\nlançada.\nEsta situação permite-nos estudar três casos, onde, em cada caso, a partícula comportar-se-á de maneira diferente.\n \nVejamos: \n1° caso: lançamento paralelo ao campo \n\nNeste caso a partícula irá ser lançada paralelamente às linhas de indução do campo magnético. \nCaso a partícula seja lançada no mesmo sentido do campo, teremos: \n");
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/353x149x19089.jpg.pagespeed.ic.nYE9zX3PZq.jpg"))); // NOI18N
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextArea2.setRows(5);
+        jTextArea2.setText(" \nPelo facto de existir inércia, a partícula continuará a movimentar-se em movimento retilíneo e uniforme no campo magnético. Portanto \nconcluímos que a carga elétrica que é lançada na direção das linhas de indução do campo executa um movimento retilíneo e uniforme. \n");
+        jTextArea2.setBorder(null);
+        jScrollPane2.setViewportView(jTextArea2);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(296, 296, 296)
+                .addComponent(jLabel21)
+                .addContainerGap(475, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(224, Short.MAX_VALUE)
+                .addComponent(jLabel24)
+                .addGap(194, 194, 194))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addComponent(jLabel21)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel3);
+        jTabbedPane1.addTab("Caso 1", jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19094.jpg"))); // NOI18N
+
+        jTextPane1.setBorder(null);
+        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane1.setText("2° caso: lançamento perpendicular ao campo  Vejamos a ilustração à direita que nos mostra a partícula eletrizada a ser lançada perpendicularmente às linhas de indução de um ponto do  campo magnético.  ");
+        jScrollPane5.setViewportView(jTextPane1);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19093.jpg"))); // NOI18N
+
+        jTextPane2.setBorder(null);
+        jTextPane2.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane2.setText("Quando se obtêm um resultado para o módulo da força magnética, significa que esse módulo é constante, pelo facto da carga (q),  do módulo da velocidade (v), e da intensidade B do campo, não variar. Com isso a partícula que fica sob a ação de uma força com intensidade constante possuirá uma direção perpendicular à velocidade. Portanto podemos concluir que, quando uma partícula  eletrizada é lançada perpendicularmente às linhas de indução de qualquer campo magnético uniforme, ela irá realizar um movimento circular e uniforme.  Essa partícula irá realizar uma trajetória circular situada num plano perpendicular às linhas de indução do campo.  Vejamos a ilustração à esquerda ");
+        jScrollPane8.setViewportView(jTextPane2);
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19094.jpg"))); // NOI18N
+
+        jTextPane3.setEditable(false);
+        jTextPane3.setBorder(null);
+        jTextPane3.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane3.setText("Para que possamos entender melhor sobre este cálculo pensemos numa partícula lançada perpendicularmente ao campo magnético, fazendo com que a sua trajetória seja em forma de circunferência. Como já sabemos a força magnética Fm é considerada uma força centrípeta Fcp. Portanto podemos fazer uma comparação entre as duas fórmulas, para que possamos calcular o raio R.  Vejamos:  ");
+        jScrollPane4.setViewportView(jTextPane3);
+
+        jTextPane4.setBorder(null);
+        jTextPane4.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane4.setText("Considerando que uma partícula foi laçada numa direção perpendicular às linhas de indução de um campo magnético (B), realizando assim um movimento circular e uniforme. O período T significa o intervalo de tempo gasto numa volta. Vejamos então como determinar esse intervalo de tempo:  Pensando em uma volta temos:  ");
+        jScrollPane9.setViewportView(jTextPane4);
+
+        jTextPane5.setBorder(null);
+        jTextPane5.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane5.setText("Vejamos a seguir duas observações:  ");
+        jScrollPane10.setViewportView(jTextPane5);
+
+        jTextPane6.setBorder(null);
+        jTextPane6.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane6.setText("2- É importante sabermos também que tanto a frequência como o período, não são dependentes da velocidade de lançamento. ");
+        jScrollPane11.setViewportView(jTextPane6);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19097.jpg"))); // NOI18N
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19098.jpg"))); // NOI18N
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19099.jpg"))); // NOI18N
+        jLabel34.setText("jLabel34");
+
+        jLabel37.setFont(new java.awt.Font("Times New Roman", 1, 13));
+        jLabel37.setText("Cálculo do raio da trajetória");
+
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 1, 13));
+        jLabel38.setText("Cálculo do período");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(jLabel26)
+                            .addGap(186, 186, 186))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel29))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jScrollPane10))
+                            .addContainerGap()))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel27)
+                        .addGap(65, 65, 65))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addGap(0, 623, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel25))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel34)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel28))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel29)))
+                        .addGap(1664, 1664, 1664)
+                        .addComponent(jLabel26)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel4);
+        jTabbedPane1.addTab("Caso 2", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextPane7.setEditable(false);
+        jTextPane7.setBorder(null);
+        jTextPane7.setFont(new java.awt.Font("Times New Roman", 0, 13));
+        jTextPane7.setText("3° caso: a partícula é lançada obliquamente no campo B   Neste caso, vamos lançar a partícula eletrizada, obliquamente às linhas de indução dum campo magnético e uniforme, fazendo com que o ângulo formado pelo lançamento não seja nem de 180°, nem de 90° e nem de 0°.   Vejamos a ilustração abaixo:  ");
+        jScrollPane12.setViewportView(jTextPane7);
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19100.jpg"))); // NOI18N
+
+        jTextPane8.setEditable(false);
+        jTextPane8.setBorder(null);
+        jTextPane8.setText("Com base na figura acima, podemos observar que a força magnética (Fm), possui uma intensidade representada por: ");
+        jScrollPane13.setViewportView(jTextPane8);
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19102.jpg"))); // NOI18N
+
+        jTextPane9.setEditable(false);
+        jTextPane9.setBorder(null);
+        jTextPane9.setText("Considerando um vetor velocidade v, “dentro” de duas componentes perpendiculares, representadas por v1 e v2, como podemos ver na figura acima, sendo que uma das direções é considerada paralela às linhas de indução e a outra é perpendicular às linhas. Vejamos:  ");
+        jScrollPane14.setViewportView(jTextPane9);
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19103.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(305, 305, 305)
+                                .addComponent(jLabel39))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(317, 317, 317)
+                                .addComponent(jLabel40)))
+                        .addGap(0, 296, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(273, 273, 273)
+                        .addComponent(jLabel41)))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel40)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel41)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab3", jPanel5);
+        jTabbedPane1.addTab("Caso 3", jPanel5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -225,7 +481,7 @@ public class UIHome extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(175, 175, 175)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(363, 363, 363))
+                .addGap(97, 97, 97))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +495,7 @@ public class UIHome extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,7 +514,7 @@ public class UIHome extends javax.swing.JFrame {
         jPanel6.setMinimumSize(new java.awt.Dimension(1024, 768));
         jPanel6.setName(""); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Library-icon.png"))); // NOI18N
         jLabel9.setText("Apoio Teórico");
@@ -294,20 +550,6 @@ public class UIHome extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel10MouseExited(evt);
-            }
-        });
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turn-off-icon.png"))); // NOI18N
-        jLabel11.setText("Sair");
-        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel11MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel11MouseExited(evt);
             }
         });
 
@@ -413,35 +655,6 @@ public class UIHome extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel22))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel23))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
@@ -456,7 +669,38 @@ public class UIHome extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)))
+                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel22))
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel23))
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(29, 29, 29)))
                 .addGap(539, 539, 539))
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel7Layout.createSequentialGroup()
@@ -534,15 +778,10 @@ public class UIHome extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel11)))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -568,10 +807,7 @@ public class UIHome extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addGap(42, 42, 42))))
+                        .addComponent(jLabel10))))
         );
 
         jPanel2.add(jPanel6, "card2");
@@ -642,22 +878,6 @@ public class UIHome extends javax.swing.JFrame {
         jLabel2.setBorder(BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel2MouseExited
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        jLabel3.setBorder(BorderFactory.createLoweredBevelBorder());
-    }//GEN-LAST:event_jLabel3MouseEntered
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        jLabel3.setBorder(BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
-        jLabel11.setBorder(BorderFactory.createLoweredBevelBorder());
-    }//GEN-LAST:event_jLabel11MouseEntered
-
-    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
-        jLabel3.setBorder(BorderFactory.createEmptyBorder());        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11MouseExited
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -683,10 +903,10 @@ public class UIHome extends javax.swing.JFrame {
         Magnet m = new Magnet();
         boolean check = verificarCampos(jTextField3.getText(), jTextField4.getText(), jTextField1.getText(), jTextField2.getText());
         if (check) {
-            float massa=(float) (Float.parseFloat(jTextField3.getText()) * Math.pow(10,-31));
-            float carga=(float) (Float.parseFloat(jTextField4.getText()) * Math.pow(10, -19));
-            p=c.calcularParticle(massa, carga, Float.parseFloat(jTextField1.getText()), jComboBox3.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString(),new Physics(0,0,Float.parseFloat(jTextField2.getText())),jComboBox2.getSelectedItem().toString());
-            m=c.calcularMagnet(Float.parseFloat(jTextField2.getText()), p);
+            float massa = (float) (Float.parseFloat(jTextField3.getText()) * Math.pow(10, -31));
+            float carga = (float) (Float.parseFloat(jTextField4.getText()) * Math.pow(10, -19));
+            p = c.calcularParticle(massa, carga, Float.parseFloat(jTextField1.getText()), jComboBox3.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString(), new Physics(0, 0, Float.parseFloat(jTextField2.getText())), jComboBox2.getSelectedItem().toString());
+            m = c.calcularMagnet(Float.parseFloat(jTextField2.getText()), p);
             jLabel30.setText(String.valueOf(m.getFm()));
             jLabel31.setText(String.valueOf(p.getFrequencia()));
             jLabel32.setText(String.valueOf(p.getPeriodo()));
@@ -697,7 +917,14 @@ public class UIHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jLabel30.setText("");
+        jLabel31.setText("");
+        jLabel32.setText("");
+        jLabel33.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -705,16 +932,14 @@ public class UIHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-                Particle p = new Particle();
-        Magnet m = new Magnet();
+        Particle p = new Particle();
         boolean check = verificarCampos(jTextField3.getText(), jTextField4.getText(), jTextField1.getText(), jTextField2.getText());
         if (check) {
-            float massa=(float)(Float.parseFloat(jTextField3.getText()) * Math.pow(10, -31));
-            float carga=(float) (Float.parseFloat(jTextField4.getText()) * Math.pow(10, -19));
-            p=c.calcularParticle(massa+12, carga+12, Float.parseFloat(jTextField1.getText()), jComboBox3.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString(),new Physics(0,0,Float.parseFloat(jTextField2.getText())),jComboBox2.getSelectedItem().toString());
-            m=c.calcularMagnet(Float.parseFloat(jTextField2.getText()), p);
-            DrawSimulation draw=new DrawSimulation(p);
-            String [] args=new String[2];
+            float massa = (float) (Float.parseFloat(jTextField3.getText()) * Math.pow(10, -31));
+            float carga = (float) (Float.parseFloat(jTextField4.getText()) * Math.pow(10, -19));
+            p = c.calcularParticle(massa, carga, Float.parseFloat(jTextField1.getText()), jComboBox3.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString(), new Physics(0, 0, Float.parseFloat(jTextField2.getText())), jComboBox2.getSelectedItem().toString());
+            DrawSimulation draw = new DrawSimulation(p);
+            String[] args = new String[2];
             draw.main(args);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Introduza valores válidos");
@@ -730,7 +955,6 @@ public class UIHome extends javax.swing.JFrame {
         //  JPanel cards;
         // cards.add("RUIMain", new RUIMain());
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new UIHome().setVisible(true);
 
@@ -745,7 +969,6 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -756,16 +979,29 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -778,11 +1014,33 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextPane jTextPane5;
+    private javax.swing.JTextPane jTextPane6;
+    private javax.swing.JTextPane jTextPane7;
+    private javax.swing.JTextPane jTextPane8;
+    private javax.swing.JTextPane jTextPane9;
     // End of variables declaration//GEN-END:variables
     Controller c;
 

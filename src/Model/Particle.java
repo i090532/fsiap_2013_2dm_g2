@@ -1,10 +1,11 @@
 package Model;
 
 import GraphicInterfaces.DrawSimulation;
+import java.text.DecimalFormat;
 
 public class Particle extends SimulationObject {
 
-    public float angle = 0.0f;
+    public float angle = 0;
     public static final int SIZE = 4;
     private String nome;
     private double valor_carga;
@@ -18,6 +19,7 @@ public class Particle extends SimulationObject {
     private float x, y;
     private float raio;
     private String saida;
+     boolean check = false,sair=false;
 
     public Particle(float x, float y, String nome, double valor_carga, String polaridade, double massa, double velocidade, String direccao) {
         setX(x);
@@ -78,10 +80,26 @@ public class Particle extends SimulationObject {
 
     @Override
     void update() {
-            setX((float) (getX() + 1));
-            if(getX()>240)
-                setY((float) ((float) getY() + Math.sqrt((Math.pow(getRaio(), 2)) - Math.pow(getX() - 240, 2))));
+        int simetrico=1;
+        if(getSaida().compareToIgnoreCase("baixo")==0) simetrico=-1;
         
+        float rad = (float) Math.PI * angle / 360;
+        float cos = (float) (getRaio() * Math.cos(rad));
+        float sin = (float) (getRaio() * Math.sin(rad));
+        if (getX() <= 241 && !check) { //fora do campo
+            setX((float) (getX() + 1));
+        } else {
+            if (getX() >= 242 && getX() < 465 && getY() < 484 && getY() > 260&&!sair) {                 //dentro do campo
+                check = true;
+                angle += 1;
+                setX((float) (getX() + cos));
+                setY((float) (getY() + (sin* simetrico)));
+            } else {
+                    sair=true;
+                    setX((float) (getX() + cos));
+                    setY((float) (getY() + sin*simetrico));
+            }
+        }
     }
 
     @Override
@@ -106,17 +124,17 @@ public class Particle extends SimulationObject {
     }
 
     public void calcularDireccao() {
-        if (getDireccao().compareTo("sair") == 0) {
-            if (getPolaridade().compareTo("positiva") == 0) {
-                setSaida("baixo");
+        if (getDireccao().compareTo("Sai") == 0) {
+            if (getPolaridade().compareToIgnoreCase("Positivo") == 0) {
+                setSaida("Baixo");
             } else {
-                setSaida("cima");
+                setSaida("Cima");
             }
         } else {
-            if (getPolaridade().compareTo("negativo") == 0) {
-                setSaida("baixo");
+            if (getPolaridade().compareToIgnoreCase("Negativo") == 0) {
+                setSaida("Baixo");
             } else {
-                setSaida("cima");
+                setSaida("Cima");
             }
         }
     }
